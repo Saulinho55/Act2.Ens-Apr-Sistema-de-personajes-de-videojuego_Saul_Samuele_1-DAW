@@ -1,5 +1,5 @@
 package sistemapersonajes.interfaces;
 
-public interface Curar {
+public interface Curable {
     void curar(); 
 } 

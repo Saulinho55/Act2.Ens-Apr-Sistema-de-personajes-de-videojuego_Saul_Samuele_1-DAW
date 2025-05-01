@@ -1,6 +1,6 @@
 package sistemapersonajes.clases;
 
-abstract class Personaje {
+public abstract class Personaje {
     protected String nombre;
     protected int salud;
     protected int nivel;
