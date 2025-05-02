@@ -7,15 +7,19 @@ import sistemapersonajes.interfaces.Movilizable;
 import sistemapersonajes.interfaces.Volador;
 
 public class Juego {
+    private ArrayList<Personaje> personajes = new ArrayList<>();
     private ArrayList<Personaje> personajes = new ArrayList<>(); // Lista de personajes en el juego
 
+    public void AñadirPersonaje(Personaje personaje) {
     public void AñadirPersonaje(Personaje personaje) { // Método para añadir un personaje a la lista
         personajes.add(personaje);
     }
 
+    public void mostrarAcciones() {
     public void mostrarAcciones() { // Método para mostrar las acciones de todos los personajes
         for (Personaje personaje : personajes) {
             System.out.println(personaje);
+            personaje.atacar();
             personaje.atacar(); // Llama al método atacar() de la clase base
             // Verifica si el personaje implementa interfaces específicas
             if (personaje instanceof Curable) ((Curable) personaje).curar();
@@ -58,11 +62,16 @@ public class Juego {
         }
     }
     
+    public void EliminarPersonaje(int indice) {
+        if (indice >= 0 && indice < personajes.size()) {
+            System.out.println(personajes.get(indice).nombre + " eliminado.");
+            personajes.remove(indice);
     public void EliminarPersonaje(int indice) { // Método para eliminar un personaje de la lista
         if (indice >= 0 && indice < personajes.size()) { // Verificar si el índice es válido
             System.out.println(personajes.get(indice).nombre + " eliminado."); // Mostrar mensaje de eliminación
             personajes.remove(indice); // Eliminar el personaje de la lista
         } else {
+            System.out.println("Índice inválido.");
             System.out.println("Índice inválido."); // Mostrar mensaje de error si el índice no es válido
         }
     }

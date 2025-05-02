@@ -5,6 +5,18 @@ import sistemapersonajes.interfaces.Magico;
 import sistemapersonajes.subclases.PersonajesHabilidadesMagicas;
 
 public class Mago extends PersonajesHabilidadesMagicas implements Magico, Curable {
+    private int mana;
+    private int sabiduria;
+    public Mago(String nombre, int nivel, int salud, int mana, int sabiduria) {
+        super(nombre, nivel, salud);
+        this.mana = mana;
+        this.sabiduria = sabiduria;
+    private int mana; // Atributo de la clase Mago
+    private int sabiduria; // Atributo de la clase Mago
+    public Mago(String nombre, int nivel, int salud, int mana, int sabiduria) { // Constructor de la clase Mago
+        super(nombre, nivel, salud); // Llama al constructor de la clase padre con los parámetros necesarios
+        this.mana = mana; // Inicializa el mana del mago
+        this.sabiduria = sabiduria; // Inicializa la sabiduría del mago
     }
     @Override
     public void atacar() {
