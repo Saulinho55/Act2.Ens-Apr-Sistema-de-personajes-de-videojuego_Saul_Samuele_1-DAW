@@ -23,9 +23,11 @@ public class Hechicero extends PersonajesHabilidadesMagicas implements Magico, D
 
     public void invocarEntidad() {
         System.out.println("El hechicero " + nombre + " invoca una entidad.");
+        System.out.println("El hechicero " + nombre + " invoca una entidad."); // Implementación del método invocarEntidad
     }
     
     public void defender() {
         System.out.println("El hechicero se defiende.");
+        System.out.println("El hechicero se defiende."); // Implementación del método defender
     }
 }
