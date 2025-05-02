@@ -18,15 +18,22 @@ public class Hechicero extends PersonajesHabilidadesMagicas implements Magico, D
     }
 
     @Override
+    public void lanzarHechizo() {
+        System.out.println("El hechicero " + nombre + " lanza un poderoso hechizo.");
+    }
+    @Override
     public void atacar() {
         System.out.println("El hechicero " + nombre + " lanza un hechizo.");
+        System.out.println("El hechicero " + nombre + " lanza un ataque.");
     }
 
     public void invocarEntidad() {
         System.out.println("El hechicero " + nombre + " invoca una entidad.");
+        System.out.println("El hechicero " + nombre + " invoca una entidad."); // Implementación del método invocarEntidad
     }
     
     public void defender() {
         System.out.println("El hechicero se defiende.");
+        System.out.println("El hechicero se defiende."); // Implementación del método defender
     }
 }

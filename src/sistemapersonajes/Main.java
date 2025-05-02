@@ -45,34 +45,48 @@ public class Main {
                             System.out.println("Escudo: ");
                             int escudo = scanner.nextInt(); // Leer el escudo del Guerrero
                             juego.AñadirPersonaje(new Guerrero(nombre, nivel, salud, fuerza, armadura, escudo)); // Crear el Guerrero
+                            System.out.println("Guerrero creado: " + nombre + " con nivel " + nivel + ", salud " + salud + ", fuerza " + fuerza + ", armadura " + armadura + ", escudo " + escudo);
                         }
                         case 2 -> { // Crear un Mago
                             System.out.print("Maná: ");
+                            System.out.println("Maná: ");
                             int mana = scanner.nextInt(); // Leer el maná del Mago
                             System.out.print("Sabiduria: ");
+                            System.out.println("Sabiduria: ");
                             int sabiduria = scanner.nextInt(); // Leer la sabiduría del Mago
                             juego.AñadirPersonaje(new Mago(nombre, nivel, salud, mana, sabiduria)); // Crear el Mago
+                            System.out.println("Mago creado: " + nombre + " con nivel " + nivel + ", salud " + salud + ", maná " + mana + ", sabiduría " + sabiduria);
                         }
                         case 3 -> { // Crear un Arquero
                             System.out.print("Agilidad: ");
+                            System.out.println("Agilidad: ");
                             int agilidad = scanner.nextInt(); // Leer la agilidad del Arquero
                             System.out.print("Flechas: ");
                         int flechas = scanner.nextInt(); // Leer las flechas del Arquero
+                            System.out.println("Flechas: ");
+                            int flechas = scanner.nextInt(); // Leer las flechas del Arquero
                             juego.AñadirPersonaje(new Arquero(nombre, nivel, salud, agilidad, flechas)); // Crear el Arquero
+                            System.out.println("Arquero creado: " + nombre + " con nivel " + nivel + ", salud " + salud + ", agilidad " + agilidad + ", flechas " + flechas);
                         }
                         case 4 -> { // Crear un Hechicero
                             System.out.print("Maná: ");
+                            System.out.println("Maná: ");
                             int mana = scanner.nextInt(); // Leer el maná del Hechicero
                             System.out.print("Concentración: ");
+                            System.out.println("Concentración: ");
                             int concentracion = scanner.nextInt(); // Leer la concentración del Hechicero
                             juego.AñadirPersonaje(new Hechicero(nombre, nivel, salud, mana, concentracion)); // Crear el Hechicero
+                            System.out.println("Hechicero creado: " + nombre + " con nivel " + nivel + ", salud " + salud + ", maná " + mana + ", concentración " + concentracion);
                         }
                         case 5 -> { // Crear un Asesino
                             System.out.print("Sigilo: ");
+                            System.out.println("Sigilo: ");
                             int sigilo = scanner.nextInt(); // Leer el sigilo del Asesino
                             System.out.print("Crítico: ");
+                            System.out.println("Crítico: ");
                             int critico = scanner.nextInt(); // Leer el crítico del Asesino
                             juego.AñadirPersonaje(new Asesino(nombre, nivel, salud, sigilo, critico)); // Crear el Asesino
+                            System.out.println("Asesino creado: " + nombre + " con nivel " + nivel + ", salud " + salud + ", sigilo " + sigilo + ", crítico " + critico);
                         }
                         default -> // Si no es un tipo válido muestra un mensaje de error
                         System.out.println("Error. No valido");
