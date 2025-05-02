@@ -3,13 +3,6 @@ import sistemapersonajes.interfaces.Movilizable;
 import sistemapersonajes.interfaces.Volador;
 import sistemapersonajes.subclases.PersonajeFisico;
 
-public class Arquero extends PersonajeFisico implements Volador, Movilizable{
-    private int agilidad;
-    private int numFlechas;
-    public Arquero(String nombre, int nivel, int salud, int agilidad, int numFlechas) {
-        super(nombre, nivel, salud);
-        this.agilidad = agilidad;
-        this.numFlechas = numFlechas;
 public class Arquero extends PersonajeFisico implements Volador, Movilizable{  
     private int agilidad; // Atributo de la clase Arquero
     private int numFlechas; // Atributo de la clase Arquero
@@ -20,28 +13,23 @@ public class Arquero extends PersonajeFisico implements Volador, Movilizable{
     }
     @Override
     public void atacar() {
-        System.out.println("El arquero " + nombre + " lanza una flecha.");
         System.out.println("El arquero " + nombre + " lanza una flecha.");  // Implementación del método atacar
     }
 
     public void dispararFlecha() {
-        System.out.println("El arquero " + nombre + " dispara una flecha.");
         System.out.println("El arquero " + nombre + " dispara una flecha."); // Implementación del método dispararFlecha
     }
 
     public void reabastecerFlechas() {
-        System.out.println("El arquero " + nombre + " reabastece sus flechas.");
         System.out.println("El arquero " + nombre + " reabastece sus flechas."); // Implementación del método reabastecerFlechas
     }
     @Override
     public void moverse() {
-        System.out.println("El arquero " + nombre + " se mueve.");
         System.out.println("El arquero " + nombre + " se mueve."); // Implementación del método moverse
     }
 
     @Override
     public void volar() {
-        System.out.println("El arquero " + nombre + " vuela.");
         System.out.println("El arquero " + nombre + " vuela."); // Implementación del método volar
     }
 }

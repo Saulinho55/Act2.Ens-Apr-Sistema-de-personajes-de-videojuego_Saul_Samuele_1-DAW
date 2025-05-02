@@ -1,16 +1,13 @@
 package sistemapersonajes.clases;
 
-import sistemapersonajes.clases.Batalla;
 import sistemapersonajes.interfaces.Defendible;
 import sistemapersonajes.interfaces.Magico;
-import sistemapersonajes.subclases.PersonajesHabilidadesMagicas;
 
 public class Batalla {
     private Personaje jugador1;
     private Personaje jugador2;
 
     public Batalla(String nombre, int salud, int nivel, Personaje jugador1, Personaje jugador2) {
-        super();
         this.jugador1 = jugador1;
         this.jugador2 = jugador2;
     }
@@ -29,10 +26,6 @@ public class Batalla {
 
     public void setJugador2(Personaje jugador2) {
         this.jugador2 = jugador2;
-    }
-
-    void atacar() {
-        System.out.println();
     }
 
     public void iniciar() {
@@ -58,18 +51,17 @@ public class Batalla {
 
         int daño = 10 + atacante.getNivel();
 
-        // Si el atacante es mágico, debe gastar mana
         if (atacante instanceof Magico) {
             Magico magico = (Magico) atacante;
-            int manaDisponible = ((Mago) atacante).getMana(); // o Hechicero
+            int manaDisponible = ((Mago) atacante).getMana();
 
             if (manaDisponible >= 20) {
                 magico.lanzarHechizo();
                 ((Mago) atacante).setMana(manaDisponible - 20);
-                daño += 10; // daño adicional por magia
+                daño += 10;
             } else {
                 System.out.println("⚠️ " + atacante.getNombre() + " no tiene suficiente mana. El hechizo falla.");
-                daño /= 2; // daño reducido por ataque débil
+                daño /= 2;
             }
         }
 
