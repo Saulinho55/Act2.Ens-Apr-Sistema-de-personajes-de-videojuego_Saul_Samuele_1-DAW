@@ -24,4 +24,7 @@ public class Mago extends PersonajesHabilidadesMagicas implements Magico, Curabl
     public void lanzarHechizo() {
         System.out.println("El mago " + nombre + " lanza un hechizo.");
     }
+    public void regenerarMana() {
+        System.out.println("El mago " +nombre+ " regenera mana");
+    }
 }
