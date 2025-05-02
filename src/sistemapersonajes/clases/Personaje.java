@@ -10,6 +10,26 @@ public abstract class Personaje {
         this.nivel = nivel;
     }
     abstract void atacar();
+
+    public String getNombre() {
+        return nombre;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    public int getSalud() {
+        return salud;
+    }
+    public void setSalud(int salud) {
+        this.salud = salud;
+    }
+    public int getNivel() {
+        return nivel;
+    }
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
