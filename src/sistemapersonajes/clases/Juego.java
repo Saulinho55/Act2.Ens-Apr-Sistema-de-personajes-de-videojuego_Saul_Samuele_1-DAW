@@ -24,7 +24,7 @@ public class Juego {
             if (personaje instanceof Movilizable) ((Movilizable) personaje).moverse();
         }
     }
-    public void listarPersonajes() {
+    public void ListaPersonajes() {
         for (int i = 0; i < personajes.size(); i++) {
             System.out.println(i + ". " + personajes.get(i));
         }
