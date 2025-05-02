@@ -97,31 +97,3 @@ public class Batalla {
 }
 
 
-
-public class Mago extends Personaje implements Magico {
-    public Mago(String nombre, int salud, int nivel) {
-        super(nombre, salud, nivel);
-        this.mana = 100;
-    }
-
-    private int mana;
-
-    public int getMana() {
-        return mana;
-    }
-
-    public void setMana(int mana) {
-        this.mana = mana;
-    }
-
-    @Override
-    public void lanzarHechizo() {
-        throw new UnsupportedOperationException("Unimplemented method 'lanzarHechizo'");
-    }
-
-    @Override
-    void atacar() {
-        throw new UnsupportedOperationException("Unimplemented method 'atacar'");
-    }
-
-}
