@@ -2,11 +2,12 @@ package sistemapersonajes.clases;
 
 import sistemapersonajes.clases.Batalla;
 import sistemapersonajes.interfaces.Defendible;
+import sistemapersonajes.interfaces.Magico;
+import sistemapersonajes.subclases.PersonajesHabilidadesMagicas;
 
-public class Batalla{
+public class Batalla {
     private Personaje jugador1;
     private Personaje jugador2;
-
 
     public Batalla(String nombre, int salud, int nivel, Personaje jugador1, Personaje jugador2) {
         super();
@@ -14,25 +15,17 @@ public class Batalla{
         this.jugador2 = jugador2;
     }
 
-    
-
     public Personaje getJugador1() {
         return jugador1;
     }
-
-
 
     public void setJugador1(Personaje jugador1) {
         this.jugador1 = jugador1;
     }
 
-
-
     public Personaje getJugador2() {
         return jugador2;
     }
-
-
 
     public void setJugador2(Personaje jugador2) {
         this.jugador2 = jugador2;
@@ -63,11 +56,27 @@ public class Batalla{
         System.out.println("➡️ " + atacante.getNombre() + " ataca a " + defensor.getNombre());
         atacante.atacar();
 
-        int daño = 10 + atacante.getNivel(); // daño base simple
+        int daño = 10 + atacante.getNivel();
+
+        // Si el atacante es mágico, debe gastar mana
+        if (atacante instanceof Magico) {
+            Magico magico = (Magico) atacante;
+            int manaDisponible = ((Mago) atacante).getMana(); // o Hechicero
+
+            if (manaDisponible >= 20) {
+                magico.lanzarHechizo();
+                ((Mago) atacante).setMana(manaDisponible - 20);
+                daño += 10; // daño adicional por magia
+            } else {
+                System.out.println("⚠️ " + atacante.getNombre() + " no tiene suficiente mana. El hechizo falla.");
+                daño /= 2; // daño reducido por ataque débil
+            }
+        }
+
         if (defensor instanceof Defendible) {
             System.out.println(defensor.getNombre() + " intenta defenderse...");
             ((Defendible) defensor).defender();
-            daño /= 2; // reduce el daño si se puede defender
+            daño /= 2;
         }
 
         defensor.setSalud(defensor.getSalud() - daño);
@@ -85,4 +94,34 @@ public class Batalla{
             System.out.println("🏆 " + jugador1.getNombre() + " gana la batalla.");
         }
     }
+}
+
+
+
+public class Mago extends Personaje implements Magico {
+    public Mago(String nombre, int salud, int nivel) {
+        super(nombre, salud, nivel);
+        this.mana = 100;
+    }
+
+    private int mana;
+
+    public int getMana() {
+        return mana;
+    }
+
+    public void setMana(int mana) {
+        this.mana = mana;
+    }
+
+    @Override
+    public void lanzarHechizo() {
+        throw new UnsupportedOperationException("Unimplemented method 'lanzarHechizo'");
+    }
+
+    @Override
+    void atacar() {
+        throw new UnsupportedOperationException("Unimplemented method 'atacar'");
+    }
+
 }
